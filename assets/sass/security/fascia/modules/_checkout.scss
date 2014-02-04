@@ -1,0 +1,34 @@
+﻿//	CHECKOUT
+//	========
+
+.progress-arrow {
+		@extend %text-transform-uppercase;
+		@extend %text-align-centre;
+		@extend %font-weight-bold;
+		@extend %display-block;
+		@extend %position-relative;
+		@extend %ellipsis;
+
+		@include gradient($grad-grey-top, $grad-grey-bottom);
+
+		padding-right: gap(.5);
+		line-height: line-height(2);
+
+		&:after {
+			@extend %position-absolute;
+
+			content: "";
+			border-top: gap() solid $white;
+			border-left: gap() solid transparent;
+			border-bottom: gap() solid $white;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	.progress-arrow--active {
+		@extend .progress-arrow;
+		//@include gradient($grad-green-top, $grad-green-bottom);
+		background: $green;
+		color: $white;
+	}

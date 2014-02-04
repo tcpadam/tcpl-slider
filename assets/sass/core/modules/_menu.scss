@@ -1,0 +1,102 @@
+﻿//	MENU
+//	=============================================
+//	menus are use to show and hide lists of links
+//	=============================================
+
+//	menu
+//	====
+
+	.menu {
+		@extend %display-inline-block;
+		@extend %position-relative;
+
+		&:focus .menu__items,
+		&:hover .menu__items {
+			@extend .show;
+			
+			height: auto;
+			clip: auto;
+			visibility: visible;
+			overflow: visible;
+			position: absolute !important;
+
+			color: $green;
+		}
+	}
+
+
+	//	menu button
+	//	===========
+
+		.menu__btn {
+			@extend %display-inline-block;
+			@extend %margin-bottom-none;
+
+			cursor: pointer;
+
+			&:after {
+				content: "\25BE";
+				margin-left: gap(.125);
+				margin-right: gap(.25);
+			}
+		}
+
+	//	menu button - no arrow
+	//	======================
+
+		.menu__btn--no-arrow {
+			@extend .menu__btn;
+
+			&:after {
+				content: "";
+				margin-left:  0;
+				margin-right: 0;
+			}
+		}
+
+
+	//	menu items
+	//	==========
+
+		.menu__items {
+			@extend %position-absolute;
+			@extend %gutter;
+			@extend .block-list;
+
+			height: 0;
+			clip: rect(0, 0, 0, 0);
+			background-color: $white;
+			visibility: hidden;
+			overflow: hidden;
+			right:   0;
+			z-index: 1;
+
+			> ul {
+				@extend .block-list;
+			}
+
+			&.mobile {
+
+				> ul {
+					border: 1px solid $green;
+					border-bottom: none;
+						li {
+							@extend %gutter;
+							width: auto;
+							background: $white;
+							color: $green;
+							border-bottom: 1px solid $green; 
+					}
+				}
+			}
+		}
+
+
+		//	menu items title
+		//	================
+
+			.menu__items__title {
+				@extend %margin-bottom-none;
+
+				@include text(1.28571);
+			}

@@ -1,0 +1,13 @@
+﻿//	positions
+//	=========
+
+//	position relative
+//	=================
+
+	.pos-rel {
+		@extend %position-relative;
+	}
+
+	.pos-abs {
+		@extend %position-absolute;
+	}

@@ -1,0 +1,107 @@
+﻿//  mini basket
+//  ===========
+
+	.mini-basket {
+		@extend .inblk;
+		@extend %position-relative;
+		@include border();
+
+		> div {
+			@extend %display-inline-block;
+		}
+
+		.rule--v {
+			@include calc(height, "100% - #{gap(.25)}", 100%);
+
+			top: gap(.125);
+		}
+	}
+
+	//	mini basket - items
+	//	=================
+
+		.mini-basket__items {
+			@extend .menu;
+
+			padding: gap(.25, -1px);
+			padding-left: gap(.5, -1px);
+			padding-right: gap(.5);
+		}
+
+		//	mini-basket__count
+		//	==================
+
+			.mini-basket__count {
+				@extend %display-inline-block;
+
+				@include media-query($max: $tab) {
+					@include border($width: 0, $radius: 50%);
+
+					width: gap(1);
+					margin: gap(-.5);
+					background-color: $bg-primary;
+					font-size: font-size(.8);
+					line-height: line-height(1, .8);
+					position: absolute;
+				}
+			}
+
+	//	mini basket - price
+	//	===================
+
+		.mini-basket__price {
+			padding: gap(.25, -1px);
+			padding-left: gap(.5);
+		}
+
+	//	mini basket - button
+	//	====================
+
+		.mini-basket__btn {
+			@extend %display-inline-block;
+
+			@include media-query($mob) {
+				@include button($button);
+				@include border($width: 0);
+
+				width: gap(1.5);
+				height: gap(1.5);
+				font-size: font-size(1.25);
+				text-align: center;
+				line-height: gap(1.5);
+				display: inline-block;
+				vertical-align: top;
+				_display: inline;
+				_zoom: 1;
+			}
+
+			@include media-query($tab) {
+				@include button($bg-primary);
+				@include border($width: 0);
+
+				cursor: pointer;
+			}
+		}
+
+
+//	--------------------  //
+
+#mini-basket-content {
+
+	&:target {
+		height: auto;
+		clip: auto;
+		visibility: visible;
+		overflow: visible;
+		position: static;
+	}
+
+	&:not(:target) {
+		height: 0;
+		clip: rect(0, 0, 0, 0);
+		visibility: hidden;
+		overflow: hidden;
+		position: absolute;
+	}
+
+}

@@ -1,0 +1,27 @@
+﻿//	BASKET
+//	=====================================================================
+//	basket styling where odd elements are styled differently to any other
+//	=====================================================================
+
+	.basket {
+
+	}
+
+
+		.basket__price {
+			@extend %font-weight-bold;
+
+			@include text(1.28571);
+		}
+
+
+		.basket__subtotal {
+			@extend %font-weight-bold;
+
+			@include text(1.71429);
+		}
+
+
+		.basket__totals td {
+			line-height: gap(1.5);
+		}

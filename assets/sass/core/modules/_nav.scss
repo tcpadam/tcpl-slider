@@ -1,0 +1,51 @@
+﻿//	nav
+//	===
+//	use this to arrange navigation items
+//	====================================
+
+	.nav {
+
+	}
+
+//	nav -- horizontal
+//	=================
+
+	.nav--h {
+		li {
+			@extend %display-inline-block;
+
+			padding-right: gap();
+		}
+	}
+
+	//	nav title
+	//	=========
+
+		.nav__title {
+			@extend %text-transform-uppercase;
+		}
+
+		.nav__title--underline {
+			@extend .nav__title;
+			@extend %margin-bottom-half;
+
+			font-size: font-size(1.14286);
+			line-height: gap(2, -2px);
+			border-bottom: 2px solid $border;
+		}
+
+	//	nav items
+	//	=========
+
+		.nav__items {
+			@extend .block-list;
+		
+			li a {
+
+				&:hover {
+				color: $green;
+				}
+
+			}
+
+		}

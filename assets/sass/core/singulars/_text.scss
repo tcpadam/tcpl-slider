@@ -1,0 +1,124 @@
+﻿//	text
+//	====
+
+//	hide text
+//	=========
+//	hide text off page when text may be replaced by an icon
+//	=======================================================
+
+	.hide-text {
+	@extend %position-absolute;
+
+	left: -10000em;
+	}
+
+
+//	--------------------  //
+
+
+//	text alignments
+//	===============
+
+	.ta-l {
+	@extend %text-align-left;
+	}
+
+	.ta-c {
+	@extend %text-align-centre;
+	}
+
+	.ta-r {
+	@extend %text-align-right;
+	}
+
+	.tva-t {
+	@extend %text-align-vertical-top;
+	}
+
+	.tva-m {
+	@extend %text-align-vertical-top;
+	}
+
+	.tva-b {
+	@extend %text-align-vertical-bottom;
+	}
+
+//	--------------------  //
+
+
+//	text uppercase
+//	==============
+
+	.upcase {
+	@extend %text-transform-uppercase;
+	}
+
+// text underline
+//	==============
+
+.underline {
+	@extend %text-decoration-underline;
+}
+
+
+//	--------------------  //
+
+
+//	line height one and a half
+//	==========================
+
+	.lh-one-half {
+	line-height: gap(1.5);
+	}
+
+
+//	subtle
+//	======
+	
+	.subtle {
+	color: $subtle-text;
+
+	* {
+		@extend %font-weight-normal;
+	}
+	}
+
+//	success
+//	======
+	
+	.success {
+	color: $white;
+	background: $green;
+
+	ul {
+		padding: 0;}
+						
+	li {
+		list-style: none;
+	}
+					
+				}
+
+//	warning
+//	======
+	
+	.warning,
+	.validation-summary-errors {
+	color: $warning;
+	background: lightyellow;
+	ul {
+		padding: 0;
+						
+		li {
+			list-style: none;
+			padding: 2px 0;
+		}
+	}
+	}
+
+//	contrast
+//	========
+
+	.contrast {
+		background: $contrast;
+	}

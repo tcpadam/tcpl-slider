@@ -1,0 +1,43 @@
+﻿//	MAIN NAV
+//	========
+
+	.main-nav {
+		@extend %margin-bottom-half;
+		@extend %position-relative;
+		@extend .grad-grey;
+		@extend .wrapper;
+
+		.menu {
+			@extend %position-static;
+
+			letter-spacing: 0;
+
+			&:hover .menu__btn {
+				background-color: $green;
+			}
+		}
+
+			.menu__btn--no-arrow {
+				@extend %text-transform-uppercase;
+				@extend %display-inline-block;
+
+				padding: gap(.5);
+				color: $white;
+			}
+
+			.rule--v {
+				height: 50%;
+				top: 25%;
+			}
+
+			.menu__items {
+				@extend .span1of1;
+
+				padding-top: gap();
+				border-top: gap(.25) solid $green;
+				box-shadow: gap(.5) gap(.5) gap(.5) gap(-.5) $black,
+							gap(-.5) gap(.5) gap(.5) gap(-.5) $black;
+				left: 0;
+				right: auto;
+			}
+	}

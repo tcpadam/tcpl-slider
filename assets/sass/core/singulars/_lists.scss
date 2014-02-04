@@ -1,0 +1,12 @@
+﻿//	lists
+//	=====
+
+//	block list
+//	==========
+//	show a list of elements without any bullets, numbers or padding
+//	===============================================================
+
+	.block-list {
+		padding-left: 0;
+		list-style: none;
+	}

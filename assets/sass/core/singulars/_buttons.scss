@@ -1,0 +1,60 @@
+﻿//	buttons
+//	=======
+
+//	button
+//	======
+//	a standard grey button
+//	======================
+
+	.btn {
+		@extend %button;
+		//@include button($button);
+		background: $grey;
+		color: $white;
+	}
+
+	.btn-square {
+		@extend %button-square;
+		@include button($button);
+	}
+
+	.btn-text {
+		border-width: 0;
+		background-color: transparent;
+		color: inherit;
+	}
+
+
+//	button primary
+//	==============
+
+	.btn--primary {
+		@extend %button;
+		background: $green;
+		color: $white;
+		//@include button($bg-primary);
+	}
+
+	.btn--secondary {
+		//background: url("/Assets/images/bg/gradient-fallback.png");
+		@extend %button;
+		//@include button($bg-secondary);
+		background: $grey;
+		color: $white;
+	}
+
+	.btn-square--primary {
+		@extend %button-square;
+		@include button($bg-primary);
+	}
+
+	.btn-select-address {
+		@include border($width:0, $radius: 2);
+		margin-bottom: gap(0.1);
+		background: none;
+
+		&:hover {
+			color: green;
+		}
+
+	}

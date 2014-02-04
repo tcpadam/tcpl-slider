@@ -1,0 +1,73 @@
+﻿//	main
+//	====
+
+//	focus
+//	=====
+//	remove outline from focus elements
+//	==================================
+
+	:focus {
+		outline: none;
+	}
+
+
+//	--------------------  //
+
+
+//	html
+//	====
+//	set base font size and line height and make all child elements border box
+//	----------------------------------------------------------------------------------------------------------------
+//	01.	makes all elements border box elements, meaning that borders and padding are included when calculating width
+//	================================================================================================================
+	
+	html {
+		font-size: $font-size;
+		line-height: $line-height;
+
+		* {
+			@each $vendor in "-webkit-", "-moz-", "" {
+				#{$vendor}box-sizing: border-box; /* 01 */
+			}
+		}
+	}
+
+
+//	--------------------  //
+
+
+//	body
+//	====
+
+	body {
+		background-color: $bg-white;
+		font-family: $sans-serif;
+		color: $text;
+		overflow-x: hidden;
+		overflow-y: scroll;
+	}
+
+
+//	banner
+//	======
+
+	header[role="banner"] {
+		padding-top: gap();
+	}
+
+
+//	main
+//	====
+//	individual pages are loaded within this element
+//	===============================================
+
+	main[role="main"] {
+		margin-bottom: gap(3);
+	}
+
+
+//	footer
+//	======
+
+	footer[role="contentinfo"] {
+	}

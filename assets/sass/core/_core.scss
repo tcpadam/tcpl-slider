@@ -1,0 +1,89 @@
+//  CORE
+//  ======================
+//  all essential partials
+//  ======================
+
+	@import
+
+//  utilities
+//  =========================================
+//	everything needed to set up the framework
+//	=========================================
+
+		"utilities/functions",
+		"utilities/mixins",
+
+    //  patterns
+    //  ------------------------------------
+    //  patterns are reusable pieces of scss
+    //  ------------------------------------
+
+		"utilities/patterns/margins-gutters",
+		"utilities/patterns/borders",
+		"utilities/patterns/displays",
+		"utilities/patterns/fields",
+		"utilities/patterns/positions",
+		"utilities/patterns/fonts",
+		"utilities/patterns/text",
+		"utilities/patterns/buttons",
+		
+    //  third party
+    //  ---------------------------------------------------------------
+    //  css needed from outside sources, such as Normalize or jQuery UI
+    //  ---------------------------------------------------------------
+
+		"utilities/third-party/normalize-2.1.3",
+		"utilities/third-party/fonts",
+		"utilities/third-party/easy-responsive-tabs.scss",
+		"utilities/third-party/no-space-fix",
+
+
+//  generic
+//  =======================================================
+//	elements found in these partials are all type selectors
+//	=======================================================
+
+    "generic/main",
+	"generic/images",
+	"generic/text",
+	"generic/table",
+	"generic/lists",
+	"generic/forms",
+
+
+//  modules
+//  ============================================================
+//	modules are blocks of css that follow BEM naming conventions
+//	============================================================
+
+	"modules/breadcrumbs",
+	"modules/carousel",
+    "modules/grid",
+	"modules/nav",
+	"modules/menu",
+	"modules/box",
+	"modules/tabs",
+	"modules/img-box",
+	"modules/fields",
+	"modules/product",
+
+
+//  singulars
+//  ===============================================================================
+//	singulars are single use snippets of CSS and are normally shorthand for brevity
+//	===============================================================================
+
+	"singulars/rules",
+	"singulars/show-hide",
+	"singulars/push-pull",
+	"singulars/gradients",
+	"singulars/images",
+	"singulars/text",
+	"singulars/wrappers",
+	"singulars/titles",
+	"singulars/buttons",
+	"singulars/lists",
+	"singulars/displays",
+	"singulars/positions",
+	"singulars/icons",
+	"singulars/margins-gutters";

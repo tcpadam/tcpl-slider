@@ -1,0 +1,180 @@
+﻿//  GRID
+//  ===================================================================
+//  01      fixes the white space issue caused by inline block elements
+//  02      set the child elements back to a normal letter spacing
+//  ===================================================================
+
+    .grid {
+        letter-spacing: -.31em; /* 01 */
+
+       > * {
+            letter-spacing: 0; /* 02 */
+        }
+    }
+
+        @if ($debug) { //  will only appear if $debug is set to true
+
+            //  grid overlay
+            //  ============
+
+                .grid__overlay {
+                    @extend %position-fixed;
+                    @extend .grid;
+                    @extend .span8of8;
+
+                    height: 100%;
+                    top: 0;
+                    z-index: 1000000;
+
+                    > .span1of8 {
+                        @include calc(width, #{col(1)} - #{gap()}, col(1));
+
+                        height: 100%;
+                        padding: 0;
+                        margin-left:  gap(.5);
+                        margin-right: gap(.5);
+                        border-left:  1px solid rgba(red, .15);
+                        border-right: 1px solid rgba(red, .15);
+                    }
+
+                    .grid__overlay__outline {
+                        @extend %display-inline-block;
+                        @extend %position-fixed;
+
+                        height: 100%;
+                        top: 0;
+
+                        &:first-child {
+                            border-left: 1px solid rgba(red, .15);
+                        }
+
+                        &:last-child {
+                            border-right: 1px solid rgba(red, .15);
+                        }
+                    }
+                }
+
+            //  grid baseline
+            //  =============
+
+                .grid__baseline {
+                    @extend %position-absolute;
+                    @extend .span8of8;
+
+                    top: 0;
+                    left: 0;
+                    z-index: 1000000;
+                }
+
+                    .grid__baseline__line {
+                        height: gap(1);
+                        border-bottom: 1px solid rgba(0, 0, 255, .15);
+                    }
+                
+        }
+
+
+    //  large device spans
+    //  ==================
+
+        [class*="span"] {
+            @extend %display-inline-block;
+            @extend %gutter;
+        }
+
+        .span1of1 {
+            width: col(8);
+        }
+
+        @for $x from 1 through 3 {
+            .span#{$x}of3 {
+                width: (100% / 3 * $x);
+            }
+        }
+
+        @for $x from 1 through 5 {
+            .span#{$x}of5 {
+                width: (100% / 5 * $x);
+            }
+        }
+
+        @for $x from 1 through 8 {
+            .span#{$x}of8 {
+                width: col($x);
+            }
+        }
+
+    @if ($is-responsive) { //  will not appear if $is-responsive is set to false
+        
+        //  small device spans
+        //  ==================
+
+            @include media-query(0px, $tab) {
+                @for $x from 1 through 3 {
+                    .span#{$x}of8 {
+                        width: col(4);
+                    }
+                }
+
+                @for $x from 4 through 8 {
+                    .span#{$x}of8 {
+                        width: col(8);
+                    }
+                }
+
+                .span1of2 {
+                    width: col(4);
+                }
+
+                .span2of2 {
+                    width: col(8);
+                }
+            }
+
+
+        //  medium device spans
+        //  -------------------
+
+            @include media-query($tab, $lap) {
+                @each $x in 1, 2 {
+                    .span#{$x}of8 {
+                        width: col(2);
+                    }
+                }
+
+                @each $x in 3, 4 {
+                    .span#{$x}of8 {
+                        width: col(4);
+                    }
+                }
+
+                @each $x in 5, 6 {
+                    .span#{$x}of8 {
+                        width: col(6);
+                    }
+                }
+
+                @each $x in 7, 8 {
+                    .span#{$x}of8 {
+                        width: col(8);
+                    }
+                }
+
+                .span1of4 {
+                    width: col(2);
+                }
+
+                .span2of4 {
+                    width: col(4);
+                }
+
+                .span3of4 {
+                    width: col(6);
+                }
+
+                .span4of4 {
+                    width: col(8);
+                }
+            }
+
+    }

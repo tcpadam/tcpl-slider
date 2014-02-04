@@ -1,0 +1,41 @@
+﻿//	mini nav
+//	========
+//	the mini nav is the mobile version of the main site navigation. rather than
+//	use a mega menu, this menu only includes top level departments and redirects
+//	the user to a top level department category page where sub departments can
+//	be chosen
+//	============================================================================
+
+	.mini-nav {
+		color: $white;
+	}
+
+	//	mini nav - items
+	//	================
+
+		.mini-nav__items {
+			@extend %text-align-centre;
+			@extend .block-list;
+			@include gradient($button, darken($button, 20%));
+		}
+
+		//	mini nav - item
+		//	===============
+
+			.mini-nav__item {
+				&:last-child {
+					> a {
+						border-width: 0;
+						padding-bottom: gap(.25);
+					}
+				}
+
+				> a {
+					@extend %text-transform-uppercase;
+					@extend %display-block;
+					@include border($radius: 0);
+
+					padding: gap(.25) gap(.25) gap(.25, -1px);
+					border-width: 0 0 1px;
+				}
+			}

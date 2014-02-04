@@ -1,0 +1,54 @@
+﻿//	CAROUSEL
+//	========
+
+	.carousel {
+		@extend %position-relative;
+
+		overflow: hidden;
+	}
+
+
+		.carousel__slides {
+			@extend .block-list;
+
+			overflow: visible;
+		}
+
+
+			.carousel__slide {
+				@extend .grid;
+
+				@include transition("margin-left #{$slow}");
+
+				float: left;
+			}
+
+
+		.carousel__controls {
+			@extend %position-absolute;
+			@extend .span1of1;
+			@extend .block-list;
+
+			top:  0;
+			left: 0;
+		}
+
+
+			.carousel__prev {
+				@extend %position-absolute;
+
+				left: 0;
+			}
+
+			.carousel__next {
+				@extend %position-absolute;
+
+				right: 0;
+			}
+
+			.carousel__paging {
+				@extend %position-absolute;
+
+				left:   0;
+				bottom: 0;
+			}

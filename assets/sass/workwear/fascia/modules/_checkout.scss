@@ -1,0 +1,130 @@
+﻿//	CHECKOUT
+//	========
+
+	.progress-arrow {
+		@extend %text-transform-uppercase;
+		@extend %text-align-centre;
+		@extend %font-weight-bold;
+		@extend %display-block;
+		@extend %position-relative;
+		@extend %ellipsis;
+
+		@include gradient($grad-grey-top, $grad-grey-bottom);
+
+		padding-right: gap(.5);
+		line-height: line-height(2);
+		font-family: Helvetica;
+
+		&:after {
+			@extend %position-absolute;
+
+			content: "";
+			border-top: gap() solid $white;
+			border-left: gap() solid transparent;
+			border-bottom: gap() solid $white;
+			top: 0;
+			right: 0;
+		}
+	}
+
+	.progress-arrow--active {
+		@extend .progress-arrow;
+
+		//@include gradient($grad-green-top, $grad-green-bottom);
+		background: $green;
+		color: $white;
+	}
+
+	
+	.carrierManagement {
+		td {
+			padding: gap(0.5);
+			@extend %text-align-centre;
+			font-size: font-size(1);
+			padding: 9px !important;
+			border: 1px solid #ccc;
+		}
+
+	}
+
+	.addressSelectbyPostcode {
+		overflow: auto; 
+		height: auto;
+		max-height: 120px; 
+	}
+
+	@media screen and (max-width: 600px) {
+	.progressIndicator {display: none;}
+
+		/*header.grid .progress-arrow,
+		header.grid .progress-arrow--active { border: none;margin: 0;padding: 0;color: #ccc;background: none; line-height: 1; text-align: left; font-weight: normal; position: static;}
+		header.grid .progress-arrow { cursor: pointer;}
+		header.grid .progress-arrow--active { color: $green }
+		header.grid .progress-arrow:hover { color: $green }*/
+    }
+
+	table.basket {
+		th { text-transform: capitalize; font-weight: normal}
+		.total { background: #ccc;}
+			@media screen and (max-width: 500px) {
+			.productImage {display:none;}
+			.productInfo {padding: 2px !important;}
+			tr td, th {font-size: 1rem !important;font-weight: normal;padding: 2px !important;}
+		}
+	}
+
+
+	        .accInputs {
+            display: none;
+        }
+
+
+        @media screen and (min-width: 715px) {
+            p.chooseSection {
+                display: none;
+            }
+
+            h2.expand:after {
+                content: "" !important;
+            }
+        }
+
+        @media screen and (max-width: 715px) {
+            .accInputs {
+                display: block;
+            }
+
+            #acc input[name=accordion]:not(:checked) + div {
+                display: none;
+            }
+
+            #acc input[name=accordion]:checked + div {
+                display: block;
+            }
+
+            #acc input[name=accordion] {
+                width: 0px;
+                height: 0px;
+                margin: 0px;
+                opacity: 0.0;
+            }
+
+            #acc label {
+                cursor: pointer;
+            }
+        }
+
+        h2.expand:after,
+		h2.filtr:after  {
+            font-size: 12px;
+            color: #808080;
+            margin-left: 3px;
+            content: "\25bc";
+            padding: 0 15px;
+            position: absolute;
+            right: 0;
+        }
+
+        .arr:after {
+            content: "\25b2" !important;
+        }

@@ -1,0 +1,75 @@
+﻿//	show & hide
+//	===========
+
+//	show
+//	----
+
+	.show {
+		@extend %position-static;
+
+		height: auto;
+		clip: auto;
+		visibility: visible;
+		overflow: visible;
+	}
+
+
+//	hide
+//	----
+
+	.hide {
+		@extend %position-absolute;
+
+		height: 0;
+		clip: rect(0, 0, 0, 0);
+		visibility: hidden;
+		overflow: hidden;
+	}
+
+
+//	media specific show & hide
+//	--------------------------
+
+	//	mobile
+	//	------
+
+		@include media-query($mob) {
+			@include show-hide(show, mob);
+			@include show-hide(hide, mob);
+		}
+
+
+	//	phablet
+	//	-------
+
+		@include media-query($phab) {
+			@include show-hide(show, phab);
+			@include show-hide(hide, phab);
+		}
+
+
+	//	tablet
+	//	------
+
+		@include media-query($tab) {
+			@include show-hide(show, tab);
+			@include show-hide(hide, tab);
+		}
+
+
+	//	laptop
+	//	------
+
+		@include media-query($lap) {
+			@include show-hide(show, lap);
+			@include show-hide(hide, lap);
+		}
+
+
+	//	desktop
+	//	-------
+
+		@include media-query($desk) {
+			@include show-hide(show, desk);
+			@include show-hide(hide, desk);
+		}

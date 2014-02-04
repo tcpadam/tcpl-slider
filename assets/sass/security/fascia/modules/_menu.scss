@@ -1,0 +1,53 @@
+﻿//	MOBILE MENU
+//	===========
+
+	#menu-switch {
+		@extend .hide;
+
+		&:checked {
+			& ~ #content-area {
+				@include transform("translateX(90%)");
+
+				#menu-switch-off {
+					width: 100%;
+					height: 100%;
+					background-color: $text;
+					opacity: 0.85;
+					clip: auto;
+					visibility: visible;
+					overflow: visible;
+					position: fixed;
+					top:  0;
+					left: 0;
+				}
+			}
+		}
+	}
+
+	#menu-switch-off {
+		@extend .hide;
+
+		@include transition("all #{$medium} ease-in-out");
+
+		background-color: transparent;
+		opacity: 1;
+	}
+
+	#menu-area {
+		@extend %position-fixed;
+		@extend .span8of8;
+
+		width: 90%;
+		margin-right: 10%;
+		padding-top: gap();
+		z-index: 0;
+	}
+
+	#content-area {
+		@extend %position-relative;
+
+		@include transition("all #{$medium} ease-in-out");
+
+		background-color: $white;
+		z-index: 1;
+	}

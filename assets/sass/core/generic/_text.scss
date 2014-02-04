@@ -1,0 +1,52 @@
+﻿//	text
+//	====
+
+//	headers
+//	=======
+
+	h1, h2, h3, h4, h5, h6 {
+		@extend %margin-bottom-only;
+		@include text(1);
+	}
+
+
+//	paragraphs
+//	==========
+
+	p {
+		@extend %margin-bottom-only;
+
+		&.expand:after {
+            content: "\25bc";
+            font-size: 12px;
+            margin-left: 3px;
+        }
+
+		a {
+			@extend %font-weight-bold;
+		}
+	}
+
+//	links
+//	=====
+
+	a, a:active, a:focus {
+		outline: none;
+		text-decoration: none;
+		color: $links;
+		color: inherit;
+	}
+
+
+//	symantic text
+//	=============
+
+	del {
+		@include text(.8);
+
+		color: $sale;
+	}
+
+	ins {
+		text-decoration: none;
+	}

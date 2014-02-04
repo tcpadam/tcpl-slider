@@ -1,0 +1,12 @@
+﻿//	WRAPPERS
+//	========
+
+	.wrapper {
+		padding-left:  col(1.5);
+		padding-right: col(1.5);
+
+		@include media-query($max: $lap) {
+			padding-left:  0;
+			padding-right: 0;
+		}
+	}

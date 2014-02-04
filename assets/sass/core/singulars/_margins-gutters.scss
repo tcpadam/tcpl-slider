@@ -1,0 +1,86 @@
+﻿//	MARGINS & GUTTERS
+//	====================================================
+//	margins and gutters can be used to space content
+//	based on the base line height set in 'variables/...'
+//	====================================================
+
+//	margins
+//	====================================================
+
+	//	margin bottom
+	//	------------------------------
+	//	01	utilities/patterns/margins
+	//	------------------------------
+		.mb {
+			@extend %margin-bottom; /* 01 */
+		}
+
+	//	margin bottom half
+	//	------------------------------
+	//	02	utilities/patterns/margins
+	//	------------------------------
+		.mb-h {
+			@extend %margin-bottom-half;
+		}
+
+	//	margin bottom
+	//	------------------------------
+	//	03	utilities/patterns/margins
+	//	------------------------------
+		.mt {
+			@extend %margin-top; /* 02 */
+		}
+
+
+	//	margin bottom - none
+	//	------------------------------
+	//	04	utilities/patterns/margins
+	//	------------------------------
+		.mb--none {
+			@extend %margin-bottom-none; /* 03 */
+		}
+
+
+//	gutters
+//	====================================================
+
+	//	gutter
+	//	------
+		.gttr {
+			padding-right: gap(.5);
+			padding-left: gap(.5);
+		}
+
+	//	gutter - none
+	//	-------------
+		.gttr--none {
+			padding-right: 0;
+			padding-left: 0;
+		}
+
+	//	gutter right
+	//	------------
+		.gttr-r {
+			padding-right: gap(.5);
+		}
+
+	//	gutter right - none
+	//	-------------------
+		.gttr-r--none {
+			padding-right: 0;
+		}
+
+	//	gutter left
+	//	-----------
+		.gttr-l {
+			padding-left: gap(.5);
+		}
+
+		.gttr-l--none {
+			padding-left: 0;
+		}	
+
+
+		.gttr-a {
+			padding: gap(.2);
+		}

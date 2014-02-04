@@ -1,0 +1,27 @@
+﻿//	promo banner
+//	============
+
+	.promo-banner {
+
+		@include default-border-radius();
+		@extend %margin-bottom-half;
+		//@extend .grid;
+		//@extend .grad-green;
+		background: $green;
+		@extend %titling-font-regular;
+		padding: gap(.3) 0;
+		color: $white;
+	}
+
+	//	promo banner - item
+	//	===================
+
+		.promo-banner__item {
+			@extend %text-align-centre;
+			@extend %position-relative;
+			@include text(1.05);
+
+			.rule--v {
+				border-color: darken($green, 20%) lighten($green, 20%) lighten($green, 20%) darken($green, 20%);
+			}
+		}

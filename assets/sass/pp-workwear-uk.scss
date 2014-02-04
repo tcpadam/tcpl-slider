@@ -1,0 +1,53 @@
+/*	
+	=============================================
+	IMPORTANT Notice - Please Read First!
+	=============================================
+	do NOT make changes directly to this compiled 
+	resource, edit the scss files instead and run 
+	compass watch to build every time a change is 
+	made or compass compile.
+	=============================================
+*/
+
+//  APPLICATION
+//  ===========================
+//  includes all sub frameworks
+//  ===========================
+
+	@import
+
+//  variables
+//  ========================================================
+//  variables allow you to easily and quickly change aspects
+//  of the site, these include font size, base line height, 
+//  font families and colours
+//  ========================================================
+
+    "variables/vanilla", // always grab vanilla variables
+    "variables/workwear",
+
+
+//  core
+//  =======================================================
+//  core is the css needed across all site variations. this
+//  shoul not need to be changed
+//  =======================================================
+
+    "core/core",
+
+
+//  fascia - workwear
+//  ========================================================
+//  needed for changes made across different variations such
+//  as 'workwear' or 'taps'
+//  ========================================================
+
+	"workwear/fascia/fascia";
+
+
+//  country - uk
+//  ===============================================================
+//  similar to fascia, these work on a country level for changes
+//  that may be needed between the UK or FR version of a particular
+//  fascia
+//  ===============================================================

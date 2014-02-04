@@ -1,0 +1,45 @@
+﻿//	box
+//	===
+//	a box is a bordered area with a title and content
+//	=================================================
+
+	.box {
+		@include border($radius: 0);
+		@extend %margin-bottom;
+	}
+
+	.box--no-border {
+		@extend %margin-bottom;
+	}
+
+	//	box title
+	//	=========
+
+		.box__title {
+			@extend %text-align-centre;
+			@extend %font-weight-normal;
+
+			//@include gradient($grad-light-green-top, $grad-light-green-bottom);
+			background: $green;
+			color: $white;
+			@include default-border-radius();
+
+			font-size: font-size(1.25);
+			text-transform: uppercase;
+			line-height: gap(1.5);
+		}
+
+		.box__title--inactive {
+			@extend .box__title;
+			color: $grey;
+			@include gradient($grad-grey-top, $grad-grey-bottom);
+		}
+
+	//	box content
+	//	===========
+	//	wraps the content of the box giving some padding
+
+		.box__content {
+			padding-left: gap(.5);
+			padding-right: gap(.5);
+		}

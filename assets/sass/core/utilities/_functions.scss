@@ -1,0 +1,91 @@
+//	FUNCTIONS
+//	=========
+
+//  FONT SIZE
+//  =========
+//  returns a font size in em, rem and px (px used for certain situations)
+//  --------------------------------------------------------------------------
+//  @param  string/integer      the font size wanted, either relative or fixed
+//  @param  string/integer      the parent font size, needed for em
+//  @param  string              the unit, either em or rem
+//  ==========================================================================
+    
+	@function font-size ($new-size: $font-size, $parent-size: $font-size, $unit: rem) {
+        @if (unitless($new-size)) {
+            $new-size: round($new-size * $font-size);
+        }
+
+        @if (unitless($parent-size)) {
+            $parent-size: round($parent-size * $font-size);
+        }
+
+        @if (floor($parent-size) == 0 and $unit == em) {
+            @return round(($new-size / $font-size) * $font-size);
+        }
+
+        @return $new-size / $parent-size + $unit;
+    }
+
+
+//	--------------------  //
+
+
+//  LINE HEIGHT
+//  ===========
+//  returns a font size in em, rem and px (px used for certain situations)
+//  ----------------------------------------------------------------------
+//  01.      add 0.001 to round values in webkit browsers
+//  ----------------------------------------------------------------------
+//  @param  string/integer      the font size, either relative or fixed
+//  @param  string/integer      the parent font size, needed for em
+//  @param  string              the unit, either em or rem
+//  ======================================================================
+    
+	@function line-height ($new-size: $font-size, $parent-size: $font-size, $unit: rem) {
+        @if (unitless($new-size)) {
+            $new-size: round($new-size * $font-size);
+        }
+
+        @if (unitless($parent-size)) {
+            $parent-size: round($parent-size * $font-size);
+        }
+
+        $multiplier: round($new-size / $font-size);
+
+        @if ($unit == em) {
+            @return ($multiplier * round($font-size * $line-height)) / $font-size + $unit;
+        }
+
+        @return $multiplier * ($line-height + 0.0001) + $unit; /* 01 */
+    }
+
+
+//	--------------------  //
+
+
+//  GAP
+//  ===
+//  returns a line in pixels based on line-height to keep vertical rythmn, a pixel offset can be set
+//  ------------------------------------------------------------------------------------------------
+//  param   $line-num       the amount of lines you want
+//  param   $pixel-offset   the amount of pixels to offset the number of lines by
+//	================================================================================================
+
+    @function gap ($line-num: 1, $pixel-offset: 0px) {
+        @return round($line-height * $line-num * $font-size) + $pixel-offset;
+    }
+
+
+//	--------------------  //
+
+
+//  COL
+//  ===
+//  returns x column width as %
+//  ------------------------------------------------
+//  param   $col-num    the amount of columns needed
+//	================================================
+
+    @function col ($col-num: 1) {
+        @return 100% / 8 * $col-num;
+    }

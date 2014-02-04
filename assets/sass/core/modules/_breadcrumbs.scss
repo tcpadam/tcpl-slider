@@ -1,0 +1,16 @@
+﻿//	breadcrumbs
+//	===========
+
+	.breadcrumbs {
+		@extend %margin-bottom;
+		@extend %gutter;
+		@extend %display-block;
+
+		li:last-child, .last, p {
+			color: $green !important;
+		}
+
+		a:hover {
+			color: $green;
+		}
+	}

@@ -1,0 +1,208 @@
+﻿//	push & pull
+//	===========
+//	wrap this around a number of grid items
+//	---------------------------------------------------------------------
+//	01.	done to remove white space between inline block elements
+//	=====================================================================
+	
+	[class*="push"],
+	[class*="pull"] {
+		@extend %position-relative;
+	}
+
+
+	//	--------------------  //
+
+
+	//	individual desktop spans
+	//	========================
+
+		.push1of1 {
+			left: col(8);
+		}
+
+		.pull1of1 {
+			right: col(8);
+		}
+
+		@for $x from 0 through 5 {
+			.push#{$x}gaps {
+				left: gap($x);
+			}
+
+			.pull#{$x}gaps {
+				right: gap($x);
+			}
+		}
+
+		@for $x from 0 through 8 {
+			.push#{$x}of8 {
+				left: col($x);
+			}
+
+			.pull#{$x}of8 {
+				right: col($x);
+			}
+		}
+
+		@for $x from 0 through 5 {
+			.push#{$x}of5 {
+				left: (100% / 5 * $x);
+			}
+
+			.pull#{$x}of5 {
+				right: (100% / 5 * $x);
+			}
+		}
+
+		@for $x from 0 through 3 {
+			.push#{$x}of3 {
+				left: (100% / 3 * $x);
+			}
+
+			.pull#{$x}of3 {
+				right: (100% / 3 * $x);
+			}
+		}
+
+
+	//	--------------------  //
+
+
+	//	individual mobile spans
+	//	=======================
+
+		@include media-query($mob, $tab) {
+			@for $x from 0 through 3 {
+				.push#{$x}of8 {
+					left: 50%;
+				}
+
+				.pull#{$x}of8 {
+					right: 50%;
+				}
+			}
+
+			@for $x from 4 through 7 {
+				.push#{$x}of8 {
+					left: 100%;
+				}
+
+				.pull#{$x}of8 {
+					right: 100%;
+				}
+			}
+
+			.push0of2 {
+				left: 0%;
+			}
+
+			.pull0of2 {
+				right: 0%;
+			}
+
+			.push1of2 {
+				left: 50%;
+			}
+
+			.pull1of2 {
+				right: 50%;
+			}
+
+			.push2of2 {
+				left: 100%;
+			}
+
+			.pull2of2 {
+				right: 100%;
+			}
+		}
+
+
+	//	--------------------  //
+
+
+	//	individual tablet spans
+	//	=======================
+
+		@include media-query($tab, $lap) {
+			@each $x in 1, 2 {
+				.push#{$x}of8 {
+					left: 25%;
+				}
+
+				.pull#{$x}of8 {
+					right: 25%;
+				}
+			}
+
+			@each $x in 3, 4 {
+				.push#{$x}of8 {
+					left: 50%;
+				}
+
+				.pull#{$x}of8 {
+					right: 50%;
+				}
+			}
+
+			@each $x in 5, 6 {
+				.push#{$x}of8 {
+					left: 75%;
+				}
+
+				.pull#{$x}of8 {
+					right: 75%;
+				}
+			}
+
+			@each $x in 7, 8 {
+				.push#{$x}of8 {
+					left: 100%;
+				}
+
+				.pull#{$x}of8 {
+					right: 100%;
+				}
+			}
+
+			.push0of4 {
+				left: 0%;
+			}
+
+			.pull0of4 {
+				right: 0%;
+			}
+
+			.push1of4 {
+				left: 25%;
+			}
+
+			.pull1of4 {
+				right: 25%;
+			}
+
+			.push2of4 {
+				left: 50%;
+			}
+
+			.pull2of4 {
+				right: 50%;
+			}
+
+			.push3of4 {
+				left: 75%;
+			}
+
+			.pull3of4 {
+				right: 75%;
+			}
+
+			.push4of4 {
+				left: 100%;
+			}
+
+			.pull4of4 {
+				right: 100%;
+			}
+		}

@@ -1,0 +1,54 @@
+﻿//	font family
+//	=================
+//	declares various fonts
+//	======================
+
+
+// font family regular
+// ===================
+
+%titling-font-regular {
+	font-family: "titilliumregular";
+}
+
+// font family bold
+// ================
+
+%titling-font-bold {
+	font-family: "titilliumbold";
+}
+
+
+//	font weights
+//	============
+//	includes various font weights that may be used across the site
+//	==============================================================
+
+	//	font weight normal
+	//	==================
+
+		%font-weight-normal {
+			font-weight: normal;
+		}
+
+
+	//	--------------------  //
+
+
+	//	font weight bold
+	//	================
+
+		%font-weight-bold {
+			font-weight: bold;
+		}
+
+
+	//	--------------------  //
+
+
+	//	font weight light
+	//	=================
+
+		%font-weight-light {
+			font-weight: lighter;
+		}

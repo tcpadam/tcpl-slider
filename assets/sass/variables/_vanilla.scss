@@ -1,0 +1,115 @@
+//	VARIABLES
+//	=========
+
+//  TEXT
+//  ====
+//	use these variables to set a base font size and
+//	line height. calculations will be based on this
+//	line height for creating a vertical rthymn grid
+//	===============================================
+
+    $font-size:   13px !default;
+    $line-height: 1.538461538461538 !default;
+
+    $serif:      georgia, times, serif !default;
+    $sans-serif: arial, helvetica, verdana, arial, sans-serif !default;
+    $monospace:  courier, monospace !default;
+
+
+//	--------------------  //
+
+
+//  COLOURS
+//  =======
+//	base colours and named colours
+//	==============================
+    
+	$white:		  #ffffff !default;
+    $black:		  #393939 !default;
+	$grey:		  #939598 !default;
+	$blue:		  #135f9b !default;
+	$yellow:	  #f8d000 !default;
+    $orange:	  #f47b20 !default;
+    $red:		  #c4161c !default;
+	$green:	      #8dc63f !default;
+
+	$grad-light-green-top:	  #ebf1df !default;
+	$grad-light-green-bottom: #d1ddba !default;
+
+	$grad-green-top:	#88a64d !default;
+	$grad-green-bottom: #67852e !default;
+
+	$grad-grey-top:	   #f8f8f8 !default; 
+	$grad-grey-bottom: #d7d7d7 !default;	
+
+    $text:		  $black !default;
+	$subtle-text: #888888 !default;
+    $links:		  $red !default;
+    $border:	  #e8e8e8 !default;
+	$button:	  $grey !default;
+	$stars:		  $yellow !default;
+	$was:		  $green !default;
+	$warning:	  $red !default;
+	$sale:		  $red !default;
+
+	$contrast:	  #D3E2C3 !default;	
+	
+	$tab-active-top:	#919191 !default;
+	$tab-active-bottom:	#4e4e4e !default;
+
+	$bg-white: $white !default;
+	$bg-primary: $green !default;
+	$bg-secondary: $white !default;
+
+	//  table
+	//  -----
+		$table-bg:             #eeeeee;
+		$table-border:         #cccccc;
+		$table-highlight:      #f5f5f5;
+		$table-row-even-bg:    #f5f5f5;
+		$table-cell-highlight: #f0ffe1;
+
+	//	carousel
+	//	--------
+		$carousel-nav-dark:  #505050 !default;
+		$carousel-nav-light: $white  !default;
+		$carousel-inactive:  $grey !default;
+		$carousel-active:    $green  !default;
+
+
+//  SPEEDS
+//  ======
+//	speeds are used for transitions
+//	===============================
+
+    $fast:   .2s;
+	$medium: .5s;
+	$slow:	 1s;
+
+
+//  DEVICES
+//  =======
+//	used for basic breakpoints for grids and as
+//	quick use variable names
+//	===========================================
+
+    $mob:  0px !default;
+    $phab: 480px !default;
+    $tab:  600px !default;
+    $lap:  992px !default;
+    $desk: 1408px !default;
+    $tv:   1888px !default;
+
+
+	h1, h2, h3 {font-family: "titilliumregular"}
+
+//  IS RESPONSIVE?
+//  ==============
+//	setting to true will increase the size of the
+//	overall css but will give you access to responsive
+//	specific classes such as grid and push/pull
+//	==================================================
+
+    $is-responsive: true !default;
+
+	$debug: true !default;

@@ -1,0 +1,47 @@
+﻿//	rules
+//	=====
+//	rules are used as content dividers
+//	==================================
+
+//	rule
+//	====
+
+	.rule {
+		@extend %position-relative;
+		@include border($radius: 0);
+
+		margin: 0 0 gap(1, -2px);
+		top: -1px;
+	}
+
+//	rule -- margin bottom half
+//	==========================
+
+	.rule--half {
+		@extend .rule;
+
+		margin: 0 0 gap(.5, -2px);
+	}
+
+//	rule -- margin bottom none
+//	==========================
+
+	.rule--mb-none {
+		@extend .rule;
+
+		margin: 0 0 gap(0, -2px);
+	}
+
+//	rule -- vertical
+//	===============
+
+	.rule--v {
+		@extend %position-absolute;
+		@extend %display-inline;
+		@include border($colour: $border);
+
+		height: 100%;
+		margin: 0;
+		margin-left: -1px;
+		top: 0;
+	}

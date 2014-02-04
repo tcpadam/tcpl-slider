@@ -1,0 +1,56 @@
+﻿//	search
+//	======
+
+	.search {
+		@extend %position-relative;
+		@extend .inblk;
+		@extend .field;
+
+		@include media-query($max: $lap) {
+			width: col(8);
+		}
+	}
+
+	//	search - input
+	//	==============
+	//	on a mobile view the search button needs to be clicked to display the search input. on a desktop view
+	//	the search input is always shown
+	//	=====================================================================================================
+
+		.search__input {
+			@extend .field__text;
+
+			@include media-query($max: $lap) {
+				width: col(8);
+				padding-right: gap(2);
+			}
+
+			@include media-query($lap) {
+				width: auto;
+			}
+		}
+
+	//	search - button
+	//	===============
+
+		.search__btn {
+			@extend .btn-square;
+
+			@include media-query($max: $lap) {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+
+	//	search - overlay
+	//	================
+	//	used to stop the search button being clicked in the mobile view
+
+		.search__overlay {
+			@extend %position-absolute;
+			@extend .lap-hide;
+
+			height: 100%;
+			left: 0;
+		}

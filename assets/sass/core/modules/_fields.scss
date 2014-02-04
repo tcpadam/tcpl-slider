@@ -1,0 +1,72 @@
+﻿//	fields
+//	=========================================================================
+//	a field is collection of elements that make a up a form
+//	=========================================================================
+
+	.field {
+		@extend %margin-bottom-half;
+
+		@include media-query($max: $lap) {
+			text-align: center;
+		}
+	}
+
+
+	//	field label
+	//	=========================================================================
+	//	01.	utilities/patterns/displays
+	//	=========================================================================
+
+		.field__lbl {
+			@extend %display-inline-block; /* 01 */
+
+			line-height: gap(1.5);
+
+			@include media-query($max: $lap) {
+				font-weight: bold;
+			}
+		}
+
+
+	//	field label - heavy
+	//	=========================================================================
+	//	a heavy field label stretches across the form, is uppercased and boldened
+	//	-------------------------------------------------------------------------
+	//	01.	utilities/patterns/displays
+	//	02.	utilities/patterns/fonts
+	//	03.	utilities/patterns/text
+	//	=========================================================================
+
+		.field__lbl--heavy {
+			@extend .field__lbl;
+			@extend %display-block;	/* 01 */
+			@extend %font-weight-bold; /* 02 */
+			@extend %text-transform-uppercase; /* 03 */
+		}
+
+
+	//	field text
+	//	=========================================================================
+	//	01.	utilities/patterns/borders
+	//	=========================================================================
+
+		.field__text {
+			@extend %field-input;
+		}
+
+
+	//	field dropdown
+	//	=========================================================================
+
+		.field__dropdown {
+			@extend %field-input;
+		}
+
+
+	//	field checkbox & radio
+	//	=========================================================================
+
+		.field__chkbox,
+		.field__radio {
+			height: gap(1.5);
+		}

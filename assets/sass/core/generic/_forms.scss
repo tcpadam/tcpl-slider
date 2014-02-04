@@ -1,0 +1,43 @@
+﻿//	forms
+//	=====
+
+	form {
+
+	}
+
+		fieldset {
+			@include border($width: 0);
+
+			margin-left: 0;
+			margin-right: 0;
+			padding: 0;
+
+			> ol, 
+			> ul {
+				@extend %margin-bottom-none;
+				@extend .block-list;
+			}
+		}
+
+			legend {
+				@extend %display-none;
+			}
+
+select {
+   background: transparent;
+   border: 1px solid #ccc;
+   //padding: 4px;
+   line-height: 1;
+   /*
+   overflow: hidden;
+   -webkit-appearance: none;
+   			&:after {
+			@extend %margin-bottom-none;
+				content: "\25BE";
+				margin-left: gap(.125);
+				margin-right: gap(.25);
+		} */
+   }
+
+
+

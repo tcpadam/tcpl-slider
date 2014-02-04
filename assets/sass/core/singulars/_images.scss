@@ -1,0 +1,19 @@
+﻿//	images
+//	======
+
+//	bordered image
+//	==============
+
+	.border-img {
+		@include border();
+
+		padding: gap(.25, -1px);
+	}
+
+	//	bordered image
+	//	==============
+
+	.logoOverlay {
+		top: 0;
+		left: 0;
+	}

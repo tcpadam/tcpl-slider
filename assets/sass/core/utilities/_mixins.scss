@@ -1,0 +1,229 @@
+//	mixins
+//	======
+
+//  text
+//  ====
+//  returns formatted font-size and line-height in em and rem
+//  ------------------------------------------------------------------------------------------
+//  param   $new-size       the size of the font needed as px or relative
+//  param   $parent-size    the size of the parent element, if it is not the same as font-size
+//  param   $unit			unit needed, em or rem
+//	==========================================================================================
+
+    @mixin text ($new-size: $font-size, $parent-size: $font-size, $unit: rem) {
+        font-size: font-size($new-size, $parent-size, em);
+        font-size: font-size($new-size, $parent-size);
+
+        line-height: line-height($new-size, $parent-size, em);
+        line-height: line-height($new-size, $parent-size);
+    }
+
+
+//  --------------------  //
+
+
+//  show & hide
+//  ===========
+//  creates a show and hide setup based off of the grid setup
+//  -----------------------------------------------------------------------------
+//	param	$vis				whether it is show or hide
+//  param   $device-name		prefixes the widths to use with responsive design
+//	=============================================================================
+    
+    @mixin show-hide ($vis, $device: "") {
+		@if ($vis == show) {
+			.#{$device + "-" + $vis} {
+				height: auto;
+				clip: auto;
+				visibility: visible;
+				position: static;
+				overflow: visible;
+			}
+		}
+
+		@if ($vis == hide) {
+            .#{$device + "-" + $vis} {
+				height: 0;
+				clip: rect(0, 0, 0, 0);
+				visibility: hidden;
+				position: absolute;
+				overflow: hidden;
+			}
+        }
+	}
+
+
+//  --------------------  //
+
+ 
+//  media query
+//  ===========
+//	this is used to add media breakpoints to css blocks
+//	------------------------------------------------------------
+//  param   $min		the min width wanted for the media query
+//	param	$max		the max width wanted for the media query
+//	============================================================
+
+    @mixin media-query ($min: "", $max: "") {
+		@if ($min != "" and $max != "") {
+			$min: $min / 16px + em;
+			$max: ($max - 1) / 16px + em;
+
+			@media screen and (min-width: $min) and (max-width: $max) {
+				@content;
+			}
+		} @else {
+			@if ($min != "") {
+				$min: $min / $font-size + "em";
+
+				@media screen and (min-width: $min) {
+					@content;
+				}
+			}
+
+			@if ($max != "") {
+				$max: ($max - 1) / $font-size + "em";
+
+				@media screen and (max-width: $max) {
+					@content;
+				}
+			}
+		}
+    }
+
+
+//  --------------------  //
+
+
+//  transition
+//  ==========
+//	used to add css transitions to elements
+//	----------------------------------------------------------------------------------------
+//	param	$value		a string of transitions values include the element, speed and easing
+//	========================================================================================
+    
+	@mixin transition($values) {
+        @each $vendor in "-webkit-", "-moz-", "-o-", "" {
+            #{$vendor}transition: #{$values};
+        }
+    }
+
+
+//  --------------------  //
+
+
+//  transform
+//  =========
+//	----------------------------------------------------------------------------------------
+//	param	$values
+//	========================================================================================
+    
+	@mixin transform($values) {
+        @each $vendor in "-webkit-", "-moz-", "-ms-", "-o-", "" {
+            #{$vendor}transform: #{$values};
+        }
+    }
+
+
+//  --------------------  //
+
+
+//  border
+//  ======
+//	outputs a four sided border, keeps a consistant look and feel
+//	----------------------------------------------------------------
+//	param	$width		the width of the borders
+//	param	$style		the style of the borders, solid, dotted etc.
+//	param	$colour		the colour of the borders
+//	param	$radius		the amount of curve added to the corners
+//	================================================================
+    
+	@mixin border($width: 1px, $style: solid, $colour: $border, $radius: 1px) {
+        border-width: $width;
+
+		@if ($width != 0) {
+			border-style: $style;
+			border-color: $colour;
+		}
+
+		border-radius: $radius;
+    }
+
+//	--------------------  //
+
+//	border
+//	======
+//	just a simple border-radius
+
+	@mixin default-border-radius($radius: 8px) {
+	  -moz-border-radius: $radius;
+	  -webkit-border-radius: $radius;
+	  -ms-border-radius: $radius;
+	  border-radius: $radius;
+	}
+
+//	--------------------  //
+
+//	button
+//	======
+//	default settings for a standard button
+//	--------------------------------------------
+//	param	$colour		the colour of the button
+//	============================================
+
+	@mixin button ($colour) {
+		@include gradient($colour, darken($colour, 20%));
+		
+		//	check the background colours lightness, if dark, font colour should be white, else black
+
+			@if (lightness($colour) >= 65) {
+				color: $black;
+			} @else {
+				color: $white;
+			}
+	}
+
+
+//	--------------------  //
+
+
+//	gradient
+//	========
+//	gives a bullet proof gradient includes fallbacks for older browsers
+//	-------------------------------------------------------------------
+//	param	$from		the starting or top colour of the gradient
+//	param	$to			the colour at the end of the gradient
+//	param	$dir		the direction of the gradient
+//	===================================================================
+
+	@mixin gradient ($from, $to, $dir: top) {
+		background-color: $from;
+		background-size: auto 100%;
+
+		background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+
+		@each $prefix in "-webkit-", "-moz-", "-o-", "" {
+			background-image: #{$prefix}linear-gradient($dir, $from, $to);
+		}
+	}
+
+
+//	--------------------  //
+
+
+//	calc
+//	====
+//	if CSS3 exists return a calculated value, else return a default value
+//	---------------------------------------------------------------------
+//	param	$property	the property that the calculation is made against
+//	param	$calc		the calculation
+//	param	$fallback	the fallback value for older browsers
+//	=====================================================================
+
+	@mixin calc($property, $calc, $fallback) {
+		#{$property}: $fallback; 
+		
+		@each $vendor in "-webkit-", "-moz-", "" {
+			#{$property}: #{$vendor}calc(#{$calc});
+		}
+	}

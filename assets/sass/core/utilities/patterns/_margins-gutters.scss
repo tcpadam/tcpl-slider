@@ -1,0 +1,51 @@
+﻿//	margins
+//	=======
+
+	//	margin bottom only
+	//	==================
+	//	resets all margins and gives only bottom margin a value
+	//	=======================================================
+
+		%margin-bottom-only {
+			margin: 0 0 gap();
+		}
+
+	//	margin bottom
+	//	=============
+
+		%margin-bottom {
+			margin-bottom: gap();
+		}
+
+	//	margin top
+	//	=============
+
+		%margin-top {
+			margin-top: gap();
+		}
+
+	//	margin bottom half
+	//	==================
+
+		%margin-bottom-half {
+			margin-bottom: gap(.5);
+		}
+
+	//	margin bottom none
+	//	==================
+
+		%margin-bottom-none {
+			margin-bottom: 0;
+		}
+
+
+//	gutters
+//	=======
+
+	//	gutter
+	//	------
+
+		%gutter {
+			padding-left:  gap(.5);
+			padding-right: gap(.5);
+		}

@@ -1,0 +1,122 @@
+﻿//	product
+//	=======
+
+	.prod {
+		@extend %margin-bottom;
+
+		@include media-query($max: $lap) {
+			margin-bottom: 0;
+			text-align: center;
+		}
+
+		.field {
+			@include media-query($max: $lap) {
+				text-align: left;
+			}
+		}
+	}
+
+//	product - company
+//	=================
+
+	.prod__company {
+		@extend %margin-bottom-none;
+		@include text(1.85);
+	}
+
+	.prod__company--sm {
+		@extend %margin-bottom-half;
+
+		@include text(1.4);
+	}
+
+//	product - name
+//	==============
+
+	.prod__name {
+		@extend %margin-bottom-none;
+		@extend %font-weight-normal;
+		@include text(1.85);
+	}
+
+	.prod__name--sm {
+		@extend %font-weight-normal;
+
+		@include text(1.4);
+	}
+
+//	product - code
+//	==============
+
+	.prod__code {
+		@extend small;
+		@extend %margin-bottom-half;
+		@extend %display-block;
+	}
+
+//	product - price
+//	===============
+
+	.prod__price {
+		@extend %margin-bottom-half;
+
+		> del {
+			// @extend %display-block;
+
+			@include media-query($max: $lap) {
+				line-height: line-height(1);
+				//display: inline-block;
+				vertical-align: top;
+			}
+
+			color: $was;
+		}
+
+		> ins {
+			@extend .pull1gaps;
+			@extend %font-weight-bold;
+			@include text(2.3);
+
+			@include media-query($max: $lap) {
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			text-decoration: none;
+		}
+
+		> small {
+			@include media-query($max: $lap) {
+				line-height: line-height(1);
+			}
+		}
+	}
+
+
+//	product - rating
+//	================
+
+	.prod__rating {
+		@extend %margin-bottom-half;
+
+		@include media-query($max: $lap) {
+			margin-bottom: gap();
+		}
+	}
+
+	//	product - stars
+	//	===============
+
+		.prod__stars {
+			@extend .pull1gaps; 
+
+			color: $stars;
+		}
+
+
+//	product - stock warning
+//	=======================
+
+	.prod__stock-warning {
+		color: $warning;
+	}

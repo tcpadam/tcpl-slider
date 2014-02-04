@@ -1,0 +1,12 @@
+﻿//	FIELD PATTERNS
+//	==============
+
+	%field-input {
+		@extend %border-input;
+
+		@include text(1);
+
+		height: gap(1.5);
+		padding: gap(.25, -1px);
+		color: inherit;
+	}

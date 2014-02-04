@@ -1,0 +1,57 @@
+﻿//	IMAGE BOX
+//	=========
+
+	.img-box {
+		@extend %position-relative;
+		@extend %titling-font-regular;
+
+		> img {}
+
+		> figcaption {
+			@extend %text-align-left;
+			@extend %text-transform-uppercase;
+			@extend %position-absolute;
+			//@extend .span1of1;
+			//width: 50%;
+			height: 38px;
+			padding: 0 10px;
+
+
+			background-color: $white;
+			background-color: rgba($white, .85);
+			//line-height: line-height(2, 1, em);
+			//line-height: line-height(2);
+
+			& .oneLine {
+				@extend %titling-font-bold;
+				font-size: 1.2em;
+				line-height: line-height(2);
+			}
+
+			& .arrow:after {
+				@extend %position-absolute;
+
+				content: "";
+				border-top: gap() solid transparent;
+				border-left: gap() solid $white;
+				border-bottom: gap() solid transparent;
+
+				position: absolute;
+				right: -19px;
+				top: 0;
+			}
+
+			background: $white;
+			color: $grey;
+			//line-height: line-height(2);
+
+			bottom: gap();
+
+			&.title {
+				font-weight: bold;
+				font-size: 1.4em;
+				width: auto;
+				padding: 0 15px;
+			}
+		}
+	}

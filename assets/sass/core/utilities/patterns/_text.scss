@@ -1,0 +1,99 @@
+﻿//	text
+//	====
+//	here you find all patterns related to text such as:
+//	1. align
+//	2. transform
+//  3. decoration
+//	===================================================
+
+//	text alignments
+//	===============
+
+	//	text align left
+	//	---------------
+
+		%text-align-left {
+			text-align: left;
+		}
+
+	//	text align centre
+	//	-----------------
+
+		%text-align-centre {
+			text-align: center;
+		}
+
+	//	text align right
+	//	----------------
+
+		%text-align-right {
+			text-align: right;
+		}
+
+	//	text align justify
+	//	------------------
+
+		%text-align-justify {
+			text-align: justify;
+		}
+
+
+	//	text align vertical top
+	//	------------------
+
+		%text-align-vertical-top {
+			vertical-align: top;
+		}
+		
+
+	//	text align vertical bottom
+	//	------------------
+
+		%text-align-vertical-bottom {
+			vertical-align: bottom;
+		}
+
+	//	text align vertical middle
+	//	------------------
+
+		%text-align-vertical-middle {
+			vertical-align: middle;
+		}
+
+
+//	text transformations
+//	====================
+
+	//	text transform uppercase
+	//	------------------------
+	//	uppercase all text
+	//	------------------------
+
+		%text-transform-uppercase {
+			text-transform: uppercase;
+		}
+
+
+//	text decorations
+//	====================
+
+	// text decoration underline
+	// -------------------------
+
+		%text-decoration-underline {
+			text-decoration: underline;
+		}
+
+//	single line text
+//	================
+
+	//	ellipsis
+	//	--------
+
+		%ellipsis {
+			@extend .span1of1;
+
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}

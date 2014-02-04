@@ -1,0 +1,46 @@
+﻿//	displays
+//	========
+
+//	inline block
+//	============
+//	make an element an inline block element
+//	---------------------------------------
+//	01.	utilities/patterns/displays
+//	=======================================
+
+	.inblk {
+		@extend %display-inline-block; /* 01 */
+	}
+
+
+//	--------------------  //
+
+
+//	block
+//	=====
+//	make an element a block element
+//	-------------------------------
+//	01.	utilities/patterns/displays
+//	===============================
+
+	.blk {
+		@extend %display-block; /* 01 */
+	}
+
+
+//	--------------------  //
+
+
+//	inline
+//	======
+//	make an element inline
+//	-------------------------------
+//	01.	utilities/patterns/displays
+//	===============================
+
+	.inln {
+		@extend %display-inline; /* 01 */
+	}
+
+
+//	--------------------  //

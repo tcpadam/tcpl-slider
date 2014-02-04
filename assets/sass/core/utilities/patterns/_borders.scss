@@ -1,0 +1,9 @@
+﻿//	borders
+//	=======
+
+//	border input
+//	============
+
+	%border-input {
+		@include border($colour: $border);
+	}

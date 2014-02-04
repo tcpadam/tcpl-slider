@@ -1,0 +1,59 @@
+﻿//	icons
+//	=====
+
+//	icon setup
+//	==========
+	@font-face {
+		font-family: "screwfix-icons";
+		src: url("/Assets/icons/screwfix-icons.eot");
+		src: url("/Assets/icons/screwfix-icons.eot?#iefix") format("embedded-opentype"),
+			 url("/Assets/icons/screwfix-icons.ttf") format("truetype"),
+			 url("/Assets/icons/screwfix-icons.woff") format("woff"),
+			 url("/Assets/icons/screwfix-icons.svg#screwfix-icons") format("svg");
+		font-weight: normal;
+		font-style: normal;
+	}
+
+	[class*="icon--"] {
+		@extend %display-inline-block;
+
+		font-family: "screwfix-icons";
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+
+//	--------------------  //
+
+.icon--search:before {
+	content: "\e600";
+}
+
+.icon--basket:before {
+	content: "\e601";
+}
+
+.icon--previous:before {
+	content: "\e602";
+}
+
+.icon--next:before {
+	content: "\e603";
+}
+
+.icon--grid:before {
+	content: "\e604";
+}
+
+.icon--list:before {
+	content: "\e605";
+}
+
+.icon--menu:before {
+	content: "\e606";
+}

@@ -1,0 +1,19 @@
+﻿//	lists
+//	=====
+
+	ul, ol {
+		@extend %margin-bottom-only;
+
+		padding-left: gap(1.5);
+	}
+
+	dl, dd {
+		margin-start: 0;
+		-o-margin-start: 0;
+		-moz-margin-start: 0;
+		-webkit-margin-start: 0;
+	}
+
+	dt {
+		font-weight: bold;
+	}

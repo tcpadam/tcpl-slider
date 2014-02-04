@@ -1,0 +1,40 @@
+﻿//	elements
+//	========
+//	pieces of css shared across multiple elements
+//	=============================================
+
+//	button
+//	======
+
+	%button {
+		@extend %display-inline-block;
+		@extend %font-weight-bold;
+		@extend %text-transform-uppercase;
+		@include border($width: 0);
+		
+		@include media-query($max: $lap) {
+			width: auto;
+		}
+
+		min-height: gap(1.5);
+		padding: 0;
+		padding-left: gap();
+		padding-right: gap();
+		padding-top: 0;
+
+		font-size: font-size(1.15);
+		line-height: gap(1.5);
+		cursor: pointer;
+	}
+
+//	button square
+//	=============
+
+	%button-square {
+		@extend %button;
+		@extend %text-align-centre;
+
+		width: gap(1.5);
+		height: gap(1.5);
+		padding: 0;
+	}

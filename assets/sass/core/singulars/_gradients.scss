@@ -1,0 +1,18 @@
+﻿//	gradients
+//	=========
+//	use these clases to apply background gradients to an element
+//	============================================================
+
+//	gradient grey
+//	=============
+
+	.grad-grey {
+		@include gradient($grey, darken($grey, 10%));
+	}
+
+//	gradient green
+//	==============
+
+	.grad-green {
+		@include gradient($green, darken($green, 10%));
+	}

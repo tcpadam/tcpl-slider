@@ -1,0 +1,41 @@
+﻿//	TABS
+//	====
+
+	.tabs {
+		@extend %margin-bottom-half;
+		@extend .block-list;
+	}
+
+		.tab {
+			@extend %display-inline-block;
+		}
+
+			.tab__head {
+				@extend %text-transform-uppercase;
+				@extend %gutter;
+
+				@include text(1.14286);
+				@include gradient($grad-grey-top, $grad-grey-bottom);
+			}
+
+			.tab__head--active {
+				@extend .tab__head;
+
+				@include gradient($tab-active-top, $tab-active-bottom);
+
+				color: $white;
+			}
+
+			.tab__arrow {
+				@extend %display-inline-block;
+				@extend %position-absolute;
+				@extend %text-align-centre;
+
+				@include text();
+
+				width: gap();
+				background-color: $white;
+				border-radius: 50%;
+				top: gap(.25);
+				right: gap(.25);
+			}

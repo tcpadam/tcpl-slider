@@ -1101,17 +1101,23 @@ select {
   left: 0;
 }
 
-/* line 37, ../../sass/core/modules/_carousel.scss */
+/* line 38, ../../sass/core/modules/_carousel.scss */
+.carousel__prev,
+.carousel__next {
+  cursor: pointer;
+}
+
+/* line 43, ../../sass/core/modules/_carousel.scss */
 .carousel__prev {
   left: 0;
 }
 
-/* line 43, ../../sass/core/modules/_carousel.scss */
+/* line 49, ../../sass/core/modules/_carousel.scss */
 .carousel__next {
   right: 0;
 }
 
-/* line 49, ../../sass/core/modules/_carousel.scss */
+/* line 55, ../../sass/core/modules/_carousel.scss */
 .carousel__paging {
   left: 0;
   bottom: 0;
@@ -2525,7 +2531,7 @@ select {
 
 /* line 9, ../../sass/core/singulars/_lists.scss */
 .block-list, fieldset > ol,
-fieldset > ul, .carousel__slides, .carousel__controls, .nav__items, .menu__items, .menu__items > ul, .tabs, .mini-nav__items {
+fieldset > ul, .carousel__slides, .carousel__controls, .carousel__paging, .nav__items, .menu__items, .menu__items > ul, .tabs, .mini-nav__items {
   padding-left: 0;
   list-style: none;
 }

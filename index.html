@@ -152,11 +152,7 @@
                 <li class="carousel__prev"></li>
                 <li class="carousel__next"></li>
 
-                <ul class="carousel__paging">
-                    <li class="carousel__page"></li>
-                    <li class="carousel__page"></li>
-                    <li class="carousel__page"></li>
-                </ul>
+                <ul class="carousel__paging"></ul>
             </ul>
         </div>
 
@@ -165,6 +161,7 @@
 
         <script>
             $('.carousel').tcplSlider({
+                hasPaging: true,
                 ajaxUrl:  '/product/showsimilar',
                 ajaxData: { productId: 'PQR456', categoryId: 'd6b0efb2-49e5-4858-8c67-4158a588341b', page: 1 }
             });
